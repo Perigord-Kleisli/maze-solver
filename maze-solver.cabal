@@ -1,0 +1,53 @@
+cabal-version:   3.4
+name:            maze-solver
+version:         0.1.0.0
+synopsis:        A simple haskell raytracer
+description:
+  A simple haskell raytracer, made as a warmup for the final reticule raytracer
+
+license:         BSD-3-Clause
+license-file:    LICENSE
+author:          Trouble-Truffle
+maintainer:      perigordtruffle7318@gmail.com
+category:        Graphics
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+-- extra-source-files:
+
+common warnings
+  ghc-options:        -Wall
+  default-extensions:
+    ConstraintKinds
+    DeriveGeneric
+    DerivingStrategies
+    GeneralizedNewtypeDeriving
+    InstanceSigs
+    KindSignatures
+    LambdaCase
+    OverloadedStrings
+    RecordWildCards
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeApplications
+    ViewPatterns
+
+executable maze-solver
+  import:           warnings
+  main-is:          Main.hs
+  build-depends:
+    , base          ^>=4.16.1.0
+    , containers
+    , gloss
+    , JuicyPixels
+    , lens
+    , linear
+    , pqueue
+    , random
+    , transformers
+    , vector
+
+  hs-source-dirs:   app
+  ghc-options:      -O2 -threaded -Wall -rtsopts
+  default-language: GHC2021
